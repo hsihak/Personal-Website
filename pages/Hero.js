@@ -7,8 +7,8 @@ const Hero = () => {
       id='hero'>
       <div className='flex flex-col gap-4'>
         <span className='text-xl text-violet-500'>Hi There,</span>
-        <h1 className='text-5xl font-bold te'>I'm Hang 👋</h1>
-        <p>I'm a First year Computer Science Student</p>
+        <h1 className='text-5xl font-bold'>Im Hang 👋</h1>
+        <p>Im a First year Computer Science Student</p>
         <br />
         <Social />
       </div>
