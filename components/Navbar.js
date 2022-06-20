@@ -1,4 +1,4 @@
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+// import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { IoClose, IoMenuSharp } from 'react-icons/io5';
 import { Transition } from '@headlessui/react';
 import navItems from './navItems';
@@ -11,7 +11,7 @@ const NavLinks = ({ ulStyles, liStyles }) => {
     <div className={ulStyles}>
       {navItems.map(item => (
         <React.Fragment key={item.id}>
-          <Link href={`/${item.href}`}>
+          <Link href={`#${item.href}`}>
             <a className={liStyles}>{item.title}</a>
           </Link>
         </React.Fragment>
