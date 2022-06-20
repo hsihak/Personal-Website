@@ -8,5 +8,6 @@
   html {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    scroll-padding: 80px;
   }
 }

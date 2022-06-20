@@ -25,7 +25,7 @@ const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
 
   return (
-    <div className='sticky top-0 bg-white navbar sm:px-6 md:px-20 lg:px-40'>
+    <div className='fixed w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40'>
       <nav className='p-2 mx-4 '>
         <div className='flex items-center justify-between h-16'>
           <div className='z-20 text-3xl font-bold logo'>HS</div>
