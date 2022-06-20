@@ -1,8 +1,0 @@
-- @screen below 680px
-  - create a condition to check the size of the screen
-    - if true
-      - display hamburger menu
-      - with the list of links
-- @screen above 680x
-  - hide hamburger menu
-  - display the links
