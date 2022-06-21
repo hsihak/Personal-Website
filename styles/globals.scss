@@ -11,3 +11,13 @@
     scroll-padding: 80px;
   }
 }
+
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
+}
+
+.active {
+  color: blueviolet;
+  font-weight: 500;
+}

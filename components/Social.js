@@ -4,7 +4,7 @@ import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs';
 
 function Social() {
   return (
-    <div className='flex items-center justify-center gap-4 text-3xl'>
+    <div className='flex items-center gap-4 text-3xl'>
       <MdEmail />
       <BsGithub />
       <BsLinkedin />
