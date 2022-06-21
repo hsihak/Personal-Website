@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import avatarImage from '../public/assets/Avatar.jpg';
 import pic from '../public/assets/pic.jpg';
 
 const About = () => {
