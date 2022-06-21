@@ -1,33 +1,27 @@
-// import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
-import { IoClose, IoMenuSharp } from 'react-icons/io5';
-import { Transition } from '@headlessui/react';
-import navItems from './navItems';
-
+import { IoClose, IoMenuSharp } from 'react-icons/io5'; // React Icons
+import { Transition } from '@headlessui/react'; // Tailwind Headless UI for Transition
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState, useRef } from 'react';
-
+import navItems from './navItems';
 // Render out Navigation items
 const NavLinks = ({ ulStyles, liStyles }) => {
   const [isActive, setIsActive] = useState();
-  const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
+  const [isClicked, setIsClicked] = useState(false);
+
   const handleActive = e => {
-    console.log(e.target.id);
     setIsActive(e.target.id);
   };
 
   // Handle scroll Active
-  const myRef = useRef(null);
-  const executeScroll = () => scrollToRef(myRef);
 
   return (
     <div className={`${ulStyles}`}>
       {navItems.map(item => (
         <React.Fragment key={item.id}>
-          <Link href={`#${item.href}`}>
+          <Link href={`${item.href}`}>
             <a
               onClick={e => {
-                executeScroll;
                 handleActive(e);
               }}
               id={item.title}
@@ -59,10 +53,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-stone-600'>
+    <div className='fixed w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-b-zinc-800'>
       <nav className='p-2 mx-4'>
         <div className='flex items-center justify-between h-16'>
-          <div className='z-20 text-3xl font-bold logo'>HS</div>
+          <div className='z-20 text-3xl font-bold logo'>
+            <Link href={'/'}>HS</Link>
+          </div>
           <div className='flex gap-3 text-2xl nav-links sm:hidden'>
             <div
               className='p-1 bg-gray-200 rounded-md dark:bg-gray-700'
@@ -112,9 +108,9 @@ const Navbar = () => {
         leaveTo='opacity-0'>
         <NavLinks
           ulStyles={
-            'flex justify-center items-center flex-col sm:hidden absolute w-screen shadow-md bg-white dark:bg-gray-900'
+            'flex justify-center items-center flex-col sm:hidden absolute w-screen shadow-md bg-white dark:bg-gray-900 '
           }
-          liStyles={'p-4 hover:bg-gray-100 rounded-xl w-screen text-center'}
+          liStyles={'p-4 hover:bg-gray-100 rounded-xl w-screen text-center '}
         />
       </Transition>
     </div>

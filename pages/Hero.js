@@ -10,6 +10,7 @@ const Hero = () => {
         <h1 className='text-6xl font-bold'>{"I'm Hang 👋"}</h1>
         <p>{"I'm a First year Computer Science Student"}</p>
         <br />
+        <hr className='w-1/2 shadow-md border-violet-300 ' />
         <Social />
       </div>
     </div>

@@ -2,22 +2,22 @@ const navItems = [
   {
     id: 1,
     title: 'Home',
-    href: 'hero',
+    href: '/',
   },
   {
     id: 2,
     title: 'About',
-    href: 'about',
+    href: '#about',
   },
   {
     id: 3,
     title: 'Projects',
-    href: 'projects',
+    href: '#projects',
   },
   {
     id: 4,
     title: 'Contact',
-    href: 'contact',
+    href: '#contact',
   },
 ];
 
