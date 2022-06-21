@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <div className='fixed w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-b-zinc-800'>
-      <nav className='p-2 mx-4'>
+      <nav className='relative p-2 mx-4'>
         <div className='flex items-center justify-between h-16'>
           <div className='z-20 text-3xl font-bold logo'>
             <Link href={'/'}>HS</Link>

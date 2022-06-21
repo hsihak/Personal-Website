@@ -6,7 +6,7 @@ import Projects from './Projects';
 
 export default function Home() {
   return (
-    <div className='home '>
+    <div className='home'>
       <Head>
         <title>Hangsihak Sin</title>
         <meta name='description' content='Hangsihak Sin' />
