@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className='text-3xl font-bold logo'>
             <Link href={'/'}>HS</Link>
           </div>
-          <div className='flex gap-3 text-2xl nav-links sm:hidden'>
+          <div className='flex gap-3 text-2xl cursor-pointer nav-links sm:hidden'>
             <div
               className='p-1 bg-gray-200 rounded-md dark:bg-gray-700'
               onClick={() => {
@@ -87,7 +87,7 @@ const Navbar = () => {
               }
             />
             <div
-              className='hidden p-1 bg-gray-200 rounded-md cursor-pointe dark:shadow-md mode-icon sm:flex sm:text-2xl'
+              className='hidden p-1 bg-gray-200 rounded-md cursor-pointer cursor-pointe dark:shadow-md mode-icon sm:flex sm:text-2xl'
               onClick={() => {
                 setTheme(theme === 'dark' ? 'light' : 'dark');
               }}>

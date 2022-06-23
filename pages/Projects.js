@@ -68,7 +68,7 @@ const Projects = () => {
             return (
               <React.Fragment key={project.id}>
                 <div className='relative '>
-                  <div className='absolute inset-x-0 bottom-0 z-20 grid justify-center w-full max-h-full gap-3 overflow-hidden text-center opacity-70 hover:opacity-95 bg-slate-300 dark:text-black'>
+                  <div className='absolute inset-x-0 bottom-0 z-20 grid justify-center w-full max-h-full gap-3 overflow-hidden text-center opacity-70 hover:opacity-95 bg-slate-300 dark:text-black hover:h-1/2 hover:transition-all hover:duration-500'>
                     <h3 className='font-semibold md:text-2xl'>
                       {project.title}
                     </h3>
@@ -78,7 +78,11 @@ const Projects = () => {
                     </div>
                     <div>
                       <h4 className='font-semibold '>Languages/Frameworks</h4>
-                      <p>{project.tools}</p>
+                      <div className='flex gap-2 p-2'>
+                        {project.tools.map((tool, index) => {
+                          return <div key={index}>{tool}</div>;
+                        })}
+                      </div>
                     </div>
                   </div>
                   <div className='opacity-100 hover:opacity-80 rounded-xl'>

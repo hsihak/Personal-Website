@@ -2,6 +2,7 @@ import '../styles/globals.scss';
 import { ThemeProvider } from 'next-themes';
 import Layout from '../components/Layout';
 import Head from 'next/head';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
   return (
