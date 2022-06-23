@@ -88,6 +88,7 @@ const Projects = () => {
                       width={300}
                       height={200}
                       priority={true}
+                      alt={project.title}
                     />
                   </div>
                 </div>
