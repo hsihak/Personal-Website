@@ -1,13 +1,12 @@
 import { IoClose, IoMenuSharp } from 'react-icons/io5'; // React Icons
-import { Transition } from '@headlessui/react'; // Tailwind Headless UI for Transition
+import SlideDown from './SlideDown';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import navItems from './navItems';
 // Render out Navigation items
 const NavLinks = ({ ulStyles, liStyles }) => {
   const [isActive, setIsActive] = useState();
-  const [isClicked, setIsClicked] = useState(false);
 
   const handleActive = e => {
     setIsActive(e.target.id);
@@ -19,8 +18,9 @@ const NavLinks = ({ ulStyles, liStyles }) => {
     <div className={`${ulStyles}`}>
       {navItems.map(item => (
         <React.Fragment key={item.id}>
-          <Link href={`${item.href}`}>
+          <Link href={`/${item.href}`}>
             <a
+              aria-hidden='true'
               onClick={e => {
                 handleActive(e);
               }}
@@ -53,10 +53,10 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed z-20 w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-b-zinc-800'>
-      <nav className='relative p-2 mx-4'>
+    <div className='fixed z-50 w-screen bg-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-b-zinc-800'>
+      <nav className='p-2 mx-4'>
         <div className='flex items-center justify-between h-16'>
-          <div className='z-20 text-3xl font-bold logo'>
+          <div className='text-3xl font-bold logo'>
             <Link href={'/'}>HS</Link>
           </div>
           <div className='flex gap-3 text-2xl nav-links sm:hidden'>
@@ -98,21 +98,14 @@ const Navbar = () => {
       </nav>
 
       {/* Handle Animation for mobile menu via Tailwind library (Headless UI) */}
-      <Transition
-        show={isShowing}
-        enter='transition-opacity duration-500'
-        enterFrom='opacity-0'
-        enterTo='opacity-100'
-        leave='transition-opacity duration-500'
-        leaveFrom='opacity-100'
-        leaveTo='opacity-0'>
+      <SlideDown isShowing={isShowing}>
         <NavLinks
           ulStyles={
             'flex justify-center items-center flex-col sm:hidden absolute w-screen shadow-md bg-white dark:bg-gray-900 '
           }
           liStyles={'p-4 hover:bg-gray-100 rounded-xl w-screen text-center '}
         />
-      </Transition>
+      </SlideDown>
     </div>
   );
 };

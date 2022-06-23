@@ -12,24 +12,24 @@ function Social() {
     router.push(href);
   };
   return (
-    <div className='flex items-center gap-4 text-3xl'>
+    <div className='flex items-center gap-4 text-3xl animate-fade-in-up'>
       <button
-        className='cursor-pointer hover:scale-110 hover:transition'
+        className='cursor-pointer hover:scale-110 hover:transition hover:duration-300'
         onClick={() => router.push('mailto:s.hsihak@gmail.com')}>
         <MdEmail />
       </button>
       <button
-        className='cursor-pointer hover:scale-110 hover:transition'
+        className='cursor-pointer hover:scale-110 hover:transition hover:duration-300'
         onClick={() => router.push('https://github.com/hsihak')}>
         <BsGithub />
       </button>
       <button
-        className='cursor-pointer hover:scale-110 hover:transition'
+        className='cursor-pointer hover:scale-110 hover:transition hover:duration-300'
         onClick={() => router.push('https://www.linkedin.com/in/hangsin/')}>
         <BsLinkedin />
       </button>
       <button
-        className='cursor-pointer hover:scale-110 hover:transition'
+        className='cursor-pointer hover:scale-110 hover:transition hover:duration-300'
         onClick={() => router.push('/')}>
         <BsTwitter />
       </button>
