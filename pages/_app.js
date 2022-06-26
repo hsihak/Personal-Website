@@ -1,8 +1,7 @@
-import '../styles/globals.scss';
+import '../styles/globals.scss'; // Some default globals styling
 import { ThemeProvider } from 'next-themes';
-import Layout from '../components/Layout';
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout'; // Layout that wrap itself with navbar and footer around its children
+import Head from 'next/head'; // Display Website Title on Browser Tab
 
 function MyApp({ Component, pageProps }) {
   return (

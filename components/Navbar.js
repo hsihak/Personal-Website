@@ -1,33 +1,18 @@
-import { IoClose, IoMenuSharp } from 'react-icons/io5'; // React Icons
-import SlideDown from './SlideDown';
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
-import navItems from './navItems';
+import { IoClose, IoMenuSharp } from 'react-icons/io5'; // React Icons
+import SlideDown from './SlideDown'; // SlideDown Animation for Mobile Dropdown Menu
+import { useTheme } from 'next-themes'; // Dark/Light mode Theme
+import React, { useEffect, useState } from 'react'; // React hooks (native)
+import navItems from './navItems'; // Navlinks data
+
 // Render out Navigation items
 const NavLinks = ({ ulStyles, liStyles }) => {
-  const [isActive, setIsActive] = useState();
-
-  const handleActive = e => {
-    setIsActive(e.target.id);
-  };
-
-  // Handle scroll Active
-
   return (
     <div className={`${ulStyles}`}>
       {navItems.map(item => (
         <React.Fragment key={item.id}>
-          <Link href={`/${item.href}`}>
-            <a
-              aria-hidden='true'
-              onClick={e => {
-                handleActive(e);
-              }}
-              id={item.title}
-              className={`${liStyles} ${
-                isActive === item.title ? 'active' : ''
-              } `}>
+          <Link href={item.href}>
+            <a id={item.title} className={liStyles}>
               {item.title}
             </a>
           </Link>
@@ -59,9 +44,10 @@ const Navbar = () => {
           <div className='text-3xl font-bold logo'>
             <Link href={'/'}>HS</Link>
           </div>
-          <div className='flex gap-3 text-2xl cursor-pointer nav-links sm:hidden'>
+          {/* Mobile Menu */}
+          <div className='flex gap-3 text-2xl nav-links sm:hidden'>
             <div
-              className='p-1 bg-gray-200 rounded-md dark:bg-gray-700'
+              className='p-1 bg-gray-200 rounded-md cursor-pointer dark:bg-gray-700'
               onClick={() => {
                 setTheme(theme === 'dark' ? 'light' : 'dark');
               }}>
@@ -79,6 +65,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
+          {/* Desktop Menu */}
           <div className='hidden sm:flex sm:gap-6 sm:items-center '>
             <NavLinks
               ulStyles={'flex flex-row gap-6'}
@@ -99,12 +86,14 @@ const Navbar = () => {
 
       {/* Handle Animation for mobile menu via Tailwind library (Headless UI) */}
       <SlideDown isShowing={isShowing}>
-        <NavLinks
-          ulStyles={
-            'flex justify-center items-center flex-col sm:hidden absolute w-screen shadow-md bg-white dark:bg-gray-900 '
-          }
-          liStyles={'p-4 hover:bg-gray-100 rounded-xl w-screen text-center '}
-        />
+        <div onClick={() => setIsShowing(isShowing => !isShowing)} className=''>
+          <NavLinks
+            ulStyles={
+              'flex justify-center items-center flex-col sm:hidden absolute w-screen shadow-md bg-white dark:bg-gray-900 '
+            }
+            liStyles={'p-4 hover:bg-gray-100 rounded-xl w-screen text-center '}
+          />
+        </div>
       </SlideDown>
     </div>
   );
