@@ -41,7 +41,7 @@ const Navbar = () => {
     <div className='fixed z-50 w-screen bg-white border-b-2 border-b-white navbar sm:px-6 md:px-20 lg:px-40 dark:bg-gray-900 dark:border-b dark:border-b-zinc-800'>
       <nav className='p-2 mx-4'>
         <div className='flex items-center justify-between h-16'>
-          <div className='text-3xl font-bold logo'>
+          <div className='text-3xl font-bold logo hover:text-violet-500'>
             <Link href={'/'}>HS</Link>
           </div>
           {/* Mobile Menu */}
@@ -70,7 +70,7 @@ const Navbar = () => {
             <NavLinks
               ulStyles={'flex flex-row gap-6'}
               liStyles={
-                'p-4 hover:bg-gray-100 rounded-xl active:bg-violet-300 active:text-white hover:text-violet-500'
+                'p-4 hover:bg-gray-100 rounded-xl active:bg-violet-300 active:text-white hover:text-violet-500 '
               }
             />
             <div

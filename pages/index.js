@@ -12,10 +12,10 @@ export default function Home() {
         id='hero'>
         <div className='flex flex-col gap-2 md:w-1/2'>
           <span className='text-2xl text-violet-500'>Hi There,</span>
-          <h1 className='text-6xl font-bold animate-fade-in-up'>
-            {"I'm Hang "}
-            <span className=' animate-wiggle'>👋</span>
+          <h1 className='text-6xl font-semibold animate-fade-in-up pb-2'>
+            {"I'm Hang 👋"}
           </h1>
+
           <p className='animate-fade-in-up'>
             {"I'm a First year Computer Science Student"}
           </p>

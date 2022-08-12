@@ -41,9 +41,12 @@ const Projects = () => {
   return (
     <div
       id='projects'
-      className='min-h-screen bg-slate-100 dark:bg-gray-900 animate-fade-in-down'>
+      className='min-h-screen bg-slate-100 dark:bg-gray-900 animate-fade-in-down py-10'>
       <div className='w-5/6 mx-auto '>
-        <h1 className='py-10 text-4xl '>Projects</h1>
+        <div className='flex justify-center flex-col items-center px-6 py-10'>
+          <h1 className=' pb-4 text-3xl md:text-5xl'>Projects</h1>
+          <hr className='w-1/2 border-violet-300 md:w-1/6 border-t-2' />
+        </div>
         <div className='grid grid-flow-row gap-6 md:grid-cols-2 lg:grid-cols-3 animate-fade-in-up'>
           {projectData.map(project => {
             return (

@@ -16,10 +16,10 @@ const About = () => {
   return (
     <>
       <div
-        className='flex items-center justify-center animate-fade-in-down '
+        className='flex items-center justify-center animate-fade-in-down py-10'
         id='about'>
         <div className='flex flex-col items-center justify-center w-11/12 px-6 py-10 rounded-md h-4/6 md:w-3/5 md:h-4/6'>
-          <h1 className='pb-4 text-3xl md:text-5xl font-base'>About Me</h1>
+          <h1 className='pb-4 text-3xl md:text-5xl'>About Me</h1>
           <hr className='w-1/2 border-b border-violet-300 md:w-1/4' />
           <div className='flex flex-row '>
             <div className='flex flex-col gap-8 pt-4 md:gap-20 md:flex-row'>
